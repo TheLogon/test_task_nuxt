@@ -1,0 +1,156 @@
+@use "sass:math";
+
+@import "./settings.scss";
+@import "./normalize.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/*
+* === COLORS ===
+*/
+$green: #4B9200;
+$orange: #F9804B;
+$yellow: #FFEE2E;
+$red: #D31414;
+$blackBlue: #333B41;
+$grey: #767474;
+$greySmoky: #ABABAB;
+$greyLight: #F1F3F2;
+$white: #FDFDFF;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: rem(16);
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 0;
+	background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+	border-radius: 25px;
+	width: 298px;
+	font-weight: 500;
+	font-size: rem(16);
+	line-height: math.div(22, 16);
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: rem(106);
+	line-height: math.div(80, 106);
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 14px 0;
+	background: #000000;
+	backdrop-filter: blur(2px);
+
+	// .header__inner
+
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+
+	// .header__logo
+
+	&__logo {
+		margin-right: 63px;
+	}
+
+	// .header__menu
+
+	&__menu {
+		display: flex;
+		gap: 58px;
+		// .header__menu_item
+
+		&_item {
+			font-weight: 500;
+			font-size: rem(16);
+			line-height: math.div(22, 16);
+			color: #ffffff;
+
+			&.active {
+				color: $orange;
+			}
+		}
+	}
+
+	// .header__copyright
+
+	&__copyright {
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(22, 16);
+		color: #ffffff;
+		margin-left: auto;
+	}
+}
+
+.intro {
+	padding-top: 95px;
+	background-image: url('@/assets/img/bg-intro.png');
+	background-position: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: calc(100vh - 83px);
+
+	// .intro__inner
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: flex-end;
+		flex-wrap: wrap;
+		gap: 60px;
+	}
+
+	// .intro__offer
+
+	&__offer {
+		position: relative;
+		max-width: 500px;
+		z-index: 1;
+		margin-top: 73px;
+
+		h1 {
+			position: relative;
+			z-index: 1;
+
+			span {
+				color: $yellow;
+			}
+
+		}
+
+		.ellipse {
+			position: absolute;
+			top: -73px;
+			left: -74px;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	// .intro__btn
+
+	&__btn {}
+}
