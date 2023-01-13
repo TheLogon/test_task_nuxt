@@ -5,7 +5,12 @@
         <div class="header__logo">
           <img src="@/assets/img/logo.svg" alt="" />
         </div>
-        <div class="header__menu">
+        <div id="burger" :class="{ active: burger }" @click.prevent="toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="header__menu" :class="{ active: burger }">
           <a href="#" class="header__menu_item active">About</a>
           <a href="#" class="header__menu_item">Map</a>
           <a href="#" class="header__menu_item">Zoos</a>
@@ -19,7 +24,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      burger: false,
+    };
+  },
+  methods: {
+    toggle() {
+      this.burger = !this.burger;
+    },
+  },
+};
 </script>
 
 <style lang="scss"></style>
